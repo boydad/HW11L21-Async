@@ -28,7 +28,7 @@ script:
 
 before_deploy: 
   - 'export _PROJECT_NAME="HW11L21-Async"'
-  - 'export _PACKAGE_NAME="asynk"'
+  - 'export _PACKAGE_NAME="async"'
   - 'export _PROJECT_VERSION=`grep -Eo "[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+" cmake/GetGitRevisionDescription/version.cpp`'
 
 deploy:
