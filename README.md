@@ -1,4 +1,5 @@
 # Пакетная обработка команд - Ассинхронная версия
+[![Build Status](https://travis-ci.org/boydad/HW11L21-Async.svg?branch=master)](https://travis-ci.org/boydad/HW11L21-Async)
 
 
 ## Условие задания
