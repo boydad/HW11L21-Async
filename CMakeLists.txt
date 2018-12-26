@@ -5,12 +5,10 @@ set(EXECUTE_FILE_NAME async)
 
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/cmake/GetGitRevisionDescription)
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include
+                    ${CMAKE_CURRENT_SOURCE_DIR}/bulk/include)
 
-add_executable(${EXECUTE_FILE_NAME} 
-  src/main.cpp 
-  ${version_file})
-
+add_executable(${EXECUTE_FILE_NAME} src/main.cpp)
 add_library(asyncBulk SHARED src/async.cpp)
 
 target_link_libraries(${EXECUTE_FILE_NAME} asyncBulk)
