@@ -26,3 +26,14 @@
 находиться в пакете async.
 
 Результат работы должен быть опубликован на bintray.
+
+## Установка пакета
+```
+wget -qO - https://bintray.com/user/downloadSubjectPublicKey?username=bintray | sudo apt-key add -
+
+echo "deb https://dl.bintray.com/boydad/otus-cpp trusty main" | sudo tee -a /etc/apt/sources.list
+
+sudo add-apt-repository ppa:jonathonf/gcc-7.1
+
+sudo apt-get update && sudo apt-get install gcc-7 g++-7 bulkmt
+```
