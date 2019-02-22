@@ -17,17 +17,15 @@ namespace async {
       return reinterpret_cast<handle_t>(manager);
   }
 
-  void receive(handle_t handle, const char *data, std::size_t /* size */)
+  void receive(handle_t handle, const char *data, std::size_t len)
   {
     if(handle == nullptr)
       throw std::logic_error("receive: disconnected handle!");
 
     CommandManager* manager = reinterpret_cast<CommandManager*>(handle);
-    
-    std::stringstream input; 
-    input << data;
-    
-    for(std::string command; input >> command; )
+
+    std::stringstream ss{std::string{data, len}}; 
+    for(std::string command; std::getline(ss, command, '\n'); )
       manager->add(std::move(command)); 
   }
 
